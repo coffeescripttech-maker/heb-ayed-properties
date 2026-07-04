@@ -16,7 +16,7 @@ const mapSvg = (
 );
 
 export function OfficeSection() {
-  const { t, locale } = useLocale();
+  const { t } = useLocale();
   const ref = useReveal<HTMLElement>();
 
   const handleTour = () => {

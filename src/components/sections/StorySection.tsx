@@ -5,7 +5,7 @@ import { img } from '../../config';
 import { DeedsCarousel } from '../ui/DeedsCarousel';
 
 export function StorySection() {
-  const { t, locale } = useLocale();
+  const { t } = useLocale();
   const ref = useReveal<HTMLElement>();
   const [expanded, setExpanded] = useState(false);
 

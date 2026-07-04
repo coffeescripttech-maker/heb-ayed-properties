@@ -152,7 +152,7 @@ export function DeedsCarousel() {
                 handleDownload(e, imgEl);
               }}>
               {downloadSvg}
-              <span>{t.deeds?.downloadLabel}</span>
+              <span>{t.deals.downloadLabel}</span>
             </a>
           </div>
         ))}

@@ -17,7 +17,7 @@ export function InquirySection() {
   const formRef = useRef<HTMLFormElement>(null);
   const phoneRef = useRef<PhoneInputHandle>(null);
   const [submitting, setSubmitting] = useState(false);
-  const [success, setSuccess] = useState(false);
+  const [success] = useState(false);
 
   const handleSubmit = useCallback(async (e: React.FormEvent) => {
     e.preventDefault();

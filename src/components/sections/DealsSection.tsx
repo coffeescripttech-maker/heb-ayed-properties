@@ -4,7 +4,7 @@ import { img } from '../../config';
 import { DocCard } from '../ui/DocCard';
 
 export function DealsSection() {
-  const { t, locale } = useLocale();
+  const { t } = useLocale();
   const ref = useReveal<HTMLElement>();
   const deals = t.deals.cards;
   const dealImages = [
