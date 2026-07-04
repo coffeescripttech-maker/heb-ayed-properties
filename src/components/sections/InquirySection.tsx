@@ -3,6 +3,7 @@ import { useLocale } from '../../i18n';
 import { useReveal } from '../../hooks/useReveal';
 import { img } from '../../config';
 import { submitLead, redirectToThankYou } from '../../lib/api';
+import { PhoneInput, type PhoneInputHandle } from '../ui/PhoneInput';
 
 const checkSvg = (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
@@ -14,6 +15,7 @@ export function InquirySection() {
   const { t, locale } = useLocale();
   const ref = useReveal<HTMLElement>();
   const formRef = useRef<HTMLFormElement>(null);
+  const phoneRef = useRef<PhoneInputHandle>(null);
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
 
@@ -24,7 +26,7 @@ export function InquirySection() {
 
     const formData = new FormData(form);
     const name = formData.get('fullname') as string;
-    const phone = formData.get('phone') as string;
+    const phone = phoneRef.current?.getNumber() || formData.get('phone') as string || '';
     const budget = formData.get('budget') as string;
     const ready = formData.get('ready') as string;
 
@@ -91,12 +93,10 @@ export function InquirySection() {
 
               <div className="inquiry-field inquiry-phone">
                 <label>{t.inquiry.phoneLabel}</label>
-                <input
-                  type="tel"
-                  name="phone"
+                <PhoneInput
+                  ref={phoneRef}
                   id="inquiryPhone"
-                  className="phone-input"
-                  data-phone-input
+                  name="phone"
                   required
                   placeholder={t.inquiry.phonePlaceholder}
                 />

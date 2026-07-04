@@ -29,15 +29,17 @@ export interface GeoIpResult {
   country_code?: string;
 }
 
-export async function geoIpLookup(): Promise<string> {
-  try {
-    const base = config.crmBase.replace(/\/$/, '');
-    const res = await fetch(`${base}/get-ip-country`, { mode: 'cors' });
-    const data: GeoIpResult = await res.json();
-    return (data.country_code || 'ae').toLowerCase();
-  } catch {
-    return 'ae';
-  }
+export function geoIpLookup(callback: (countryCode: string) => void): void {
+  const base = config.crmBase.replace(/\/$/, '');
+  fetch(`${base}/get-ip-country`, { mode: 'cors' })
+    .then((r) => r.json())
+    .then((data: GeoIpResult) => {
+      const code = (data.country_code || 'ae').toLowerCase();
+      callback(code);
+    })
+    .catch(() => {
+      callback('ae');
+    });
 }
 
 export async function submitLead(payload: LeadPayload, locale: 'ar' | 'en'): Promise<LeadResponse> {

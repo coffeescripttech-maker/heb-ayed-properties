@@ -2,6 +2,7 @@ import { useState, useRef, useCallback } from 'react';
 import { useLocale } from '../../i18n';
 import { img } from '../../config';
 import { submitLead, redirectToThankYou } from '../../lib/api';
+import { PhoneInput, type PhoneInputHandle } from './PhoneInput';
 
 const badgeSvg = (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
@@ -11,11 +12,11 @@ const badgeSvg = (
 
 export function PhoneCard() {
   const { t, locale } = useLocale();
-  const inputRef = useRef<HTMLInputElement>(null);
+  const phoneRef = useRef<PhoneInputHandle>(null);
   const [submitting, setSubmitting] = useState(false);
 
   const handleSubmit = useCallback(async () => {
-    const phone = inputRef.current?.value || '';
+    const phone = phoneRef.current?.getNumber() || '';
     if (!phone || phone.length < 8) {
       alert(t.errors.invalidPhone);
       return;
@@ -49,26 +50,10 @@ export function PhoneCard() {
         <h4 dangerouslySetInnerHTML={{ __html: t.hero.phoneCardTitle }} />
 
         <div className="phone-card-phone" dir="ltr">
-          <input
-            ref={inputRef}
-            type="tel"
+          <PhoneInput
+            ref={phoneRef}
             id="heroPhone"
-            className="phone-input"
-            data-phone-input
             placeholder={t.hero.phonePlaceholder}
-            style={{
-              width: '100%',
-              padding: '14px 18px',
-              borderRadius: 12,
-              border: '1px solid var(--color-hair-strong)',
-              background: 'var(--color-bg-elev)',
-              color: 'var(--color-text)',
-              fontSize: 16,
-              fontFamily: 'inherit',
-              direction: 'ltr',
-              textAlign: 'left',
-              boxSizing: 'border-box',
-            }}
           />
         </div>
 

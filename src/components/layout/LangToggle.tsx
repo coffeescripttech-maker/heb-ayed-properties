@@ -12,18 +12,18 @@ export function LangToggle() {
       <div className="lang-pill" role="tablist">
         <button
           role="tab"
+          aria-selected={locale === 'en'}
+          onClick={locale === 'ar' ? handleToggle : undefined}
+        >
+          English
+        </button>
+        <button
+          role="tab"
           data-lang="ar"
           aria-selected={locale === 'ar'}
           onClick={locale === 'en' ? handleToggle : undefined}
         >
           العربية
-        </button>
-        <button
-          role="tab"
-          aria-selected={locale === 'en'}
-          onClick={locale === 'ar' ? handleToggle : undefined}
-        >
-          English
         </button>
       </div>
     </div>
