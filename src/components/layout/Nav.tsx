@@ -1,25 +1,15 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useLocale } from '../../i18n';
 
-const brandMarkSvg = (
-  <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <linearGradient id="lg" x1="0%" y1="100%" x2="0%" y2="0%">
-        <stop offset="0%" stopColor="#2A9FCC" />
-        <stop offset="100%" stopColor="#7FDAFA" />
-      </linearGradient>
-    </defs>
-    <rect x="8" y="9" width="3" height="27" rx="1.5" fill="url(#lg)" opacity=".35" />
-    <rect x="14" y="5" width="3" height="31" rx="1.5" fill="url(#lg)" opacity=".35" />
-    <rect x="20" y="11" width="3" height="25" rx="1.5" fill="url(#lg)" opacity=".35" />
-    <rect x="26" y="17" width="3" height="19" rx="1.5" fill="url(#lg)" opacity=".35" />
-    <rect x="32" y="25" width="3" height="11" rx="1.5" fill="url(#lg)" opacity=".35" />
-    <rect x="6" y="8" width="3" height="28" rx="1.5" fill="url(#lg)" />
-    <rect x="12" y="4" width="3" height="32" rx="1.5" fill="url(#lg)" />
-    <rect x="18" y="10" width="3" height="26" rx="1.5" fill="url(#lg)" />
-    <rect x="24" y="16" width="3" height="20" rx="1.5" fill="url(#lg)" />
-    <rect x="30" y="24" width="3" height="12" rx="1.5" fill="url(#lg)" />
-  </svg>
+const brandMark = (
+  <img
+    src="/img/logo.jpg"
+    alt="Iheb Ayed Properties"
+    className="nav-logo-img"
+    width="36"
+    height="auto"
+    style={{ display: 'block', height: 36, width: 'auto', borderRadius: 6 }}
+  />
 );
 
 const menuSvg = (
@@ -56,13 +46,13 @@ export function Nav() {
         <a
           href="/"
           className="nav-brand"
-          aria-label={locale === 'ar' ? 'الصفحة الرئيسية — علاء مهرة' : 'Home — Alaa Mohra'}
+          aria-label={locale === 'ar' ? 'الصفحة الرئيسية — إيهاب عيّاد العقارية' : 'Home — Iheb Ayed Properties'}
         >
           <div className="nav-brand-mark" aria-hidden="true">
-            {brandMarkSvg}
+            {brandMark}
           </div>
           <div className="nav-brand-name">
-            <span>{locale === 'ar' ? 'علاء مهرة' : 'Alaa Mohra'}</span>
+            <span>{locale === 'ar' ? 'إيهاب عيّاد العقارية' : 'Iheb Ayed Properties'}</span>
           </div>
         </a>
 

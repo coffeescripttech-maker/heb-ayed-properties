@@ -45,21 +45,17 @@ export function Footer() {
           <div className="foot-brand">
             <div className="brand">
               <div className="brand-mark" aria-hidden="true">
-                <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="8" y="9" width="3" height="27" rx="1.5" fill="#FFFFFF" opacity=".35" />
-                  <rect x="14" y="5" width="3" height="31" rx="1.5" fill="#FFFFFF" opacity=".35" />
-                  <rect x="20" y="11" width="3" height="25" rx="1.5" fill="#FFFFFF" opacity=".35" />
-                  <rect x="26" y="17" width="3" height="19" rx="1.5" fill="#FFFFFF" opacity=".35" />
-                  <rect x="32" y="25" width="3" height="11" rx="1.5" fill="#FFFFFF" opacity=".35" />
-                  <rect x="6" y="8" width="3" height="28" rx="1.5" fill="#FFFFFF" />
-                  <rect x="12" y="4" width="3" height="32" rx="1.5" fill="#FFFFFF" />
-                  <rect x="18" y="10" width="3" height="26" rx="1.5" fill="#FFFFFF" />
-                  <rect x="24" y="16" width="3" height="20" rx="1.5" fill="#FFFFFF" />
-                  <rect x="30" y="24" width="3" height="12" rx="1.5" fill="#FFFFFF" />
-                </svg>
+                <img
+                  src="/img/logo.jpg"
+                  alt="Iheb Ayed Properties"
+                  className="footer-logo-img"
+                  width="44"
+                  height="auto"
+                  style={{ display: 'block', height: 44, width: 'auto', borderRadius: 8 }}
+                />
               </div>
               <div className="brand-name">
-                <span className="brand-first">{locale === 'ar' ? 'علاء مهرة' : 'Alaa Mohra'}</span>
+                <span className="brand-first">{locale === 'ar' ? 'إيهاب عيّاد العقارية' : 'Iheb Ayed Properties'}</span>
               </div>
             </div>
             <p className="tag">{t.footer.tagline}</p>

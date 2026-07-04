@@ -38,7 +38,7 @@ export function PhoneCard() {
       <div
         className="phone-card-photo"
         style={{
-          backgroundImage: `url(${img('hero-phone.webp')})`,
+          backgroundImage: `url(${img('hero-bg.jpg')})`,
         }}
       />
 

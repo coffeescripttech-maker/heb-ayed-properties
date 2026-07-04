@@ -5,7 +5,7 @@ import { img } from '../../config';
 
 const checkSvg = (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-    <polyline points="20 6 9 17 4 12" />
+    <polyline points="20 6 9 17 4 12" fill="none" stroke="currentColor" strokeWidth="3" />
   </svg>
 );
 
@@ -17,7 +17,7 @@ const checkSvg = (
       const link = document.createElement('link');
       link.rel = 'preload';
       link.as = 'image';
-      link.href = img('hero-phone.webp');
+      link.href = img('hero-bg.jpg');
       link.setAttribute('data-hero-preload', '1');
       link.setAttribute('fetchpriority', 'high');
       document.head.appendChild(link);

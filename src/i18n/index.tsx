@@ -1,4 +1,11 @@
-import React, { createContext, useContext, useState, useCallback, useEffect, type ReactNode } from 'react';
+import React, {
+  createContext,
+  useContext,
+  useState,
+  useCallback,
+  useEffect,
+  type ReactNode
+} from 'react';
 import type { Locale } from '../types';
 import { translations, type SiteContent } from './translations';
 
@@ -13,7 +20,7 @@ const LocaleContext = createContext<LocaleContextValue | null>(null);
 
 function detectInitialLocale(): Locale {
   const html = document.documentElement;
-  return (html.getAttribute('lang') === 'en' ? 'en' : 'ar') as Locale;
+  return (html.getAttribute('lang') === 'ar' ? 'ar' : 'en') as Locale;
 }
 
 export function LocaleProvider({ children }: { children: ReactNode }) {
@@ -38,13 +45,11 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
     locale,
     setLocale,
     t: translations[locale],
-    dir: locale === 'ar' ? 'rtl' : 'ltr',
+    dir: locale === 'ar' ? 'rtl' : 'ltr'
   };
 
   return (
-    <LocaleContext.Provider value={value}>
-      {children}
-    </LocaleContext.Provider>
+    <LocaleContext.Provider value={value}>{children}</LocaleContext.Provider>
   );
 }
 

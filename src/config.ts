@@ -64,7 +64,7 @@ export const config: AppConfig = {
   apiUrl: 'https://crm.alaainvest.com/api/store-lead-api',
   qualifyApiUrl: 'https://crm.alaainvest.com/api/update-lead-api',
   apiKey: 'hv8tgrt*@$&*8vbfdubg8tvbruvburvbuygfdbvv4r43fesn3#*$@Y$',
-  source: { ar: 'Alaainvest', en: 'Alaainvest English' },
+  source: { ar: 'Iheb Ayed Properties', en: 'Iheb Ayed Properties English' },
   thankYou: { ar: '/thank-you', en: '/english/thank-you' },
   cloudflare: {
     customerCode: 'je6w6lwjo03k0crg',
@@ -75,7 +75,7 @@ export const config: AppConfig = {
   downloadSources,
   videos,
   images: {
-    heroPhone: 'hero-phone.webp',
+    heroPhone: 'hero-bg.jpg',
     story: 'team-01.webp',
     office: 'office-01.webp',
     inquiryBg: 'hero-phone.webp',

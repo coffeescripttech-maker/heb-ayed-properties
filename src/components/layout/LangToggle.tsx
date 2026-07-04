@@ -13,18 +13,17 @@ export function LangToggle() {
         <button
           role="tab"
           aria-selected={locale === 'en'}
-          onClick={locale === 'ar' ? handleToggle : undefined}
-        >
+          onClick={locale === 'ar' ? handleToggle : undefined}>
           English
         </button>
-        <button
+        {/* <button
           role="tab"
           data-lang="ar"
           aria-selected={locale === 'ar'}
           onClick={locale === 'en' ? handleToggle : undefined}
         >
           العربية
-        </button>
+        </button> */}
       </div>
     </div>
   );

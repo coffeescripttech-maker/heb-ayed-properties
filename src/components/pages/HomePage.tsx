@@ -16,7 +16,7 @@ export function HomePage() {
   return (
     <>
       <HeroSection />
-      <DealsSection />
+      {/* <DealsSection />
       <HowIChooseSection />
       <StorySection />
       <AwardsSection />
@@ -27,7 +27,7 @@ export function HomePage() {
       <InquirySection />
       <OfficeSection />
       <NewsSection />
-      <QuotesSection />
+      <QuotesSection /> */}
     </>
   );
 }

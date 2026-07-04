@@ -24,7 +24,7 @@ export function StorySection() {
           width={800}
           height={450}
           loading="lazy"
-          alt="Alaa Mohra"
+          alt="Iheb Ayed Properties"
         />
       </div>
 
