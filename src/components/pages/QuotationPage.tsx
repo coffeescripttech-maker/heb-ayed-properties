@@ -241,24 +241,24 @@ const styles = {
     borderRadius: 'var(--radius-card-lg)',
     padding: '32px 28px',
     display: 'flex',
-    flexDirection: 'column',
+    flexDirection: 'column' as const,
     gap: 20,
     transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-    position: 'relative' as const
-  },
+    position: 'relative' as const,
+  } as React.CSSProperties,
   cardHighlight: {
     background: 'var(--color-bg-card)',
     border: '1px solid rgba(93, 206, 247, 0.3)',
     borderRadius: 'var(--radius-card-lg)',
     padding: '32px 28px',
     display: 'flex',
-    flexDirection: 'column',
+    flexDirection: 'column' as const,
     gap: 20,
     transition: 'transform 0.3s ease, box-shadow 0.3s ease',
     position: 'relative' as const,
     boxShadow:
-      '0 0 0 1px rgba(93, 206, 247, 0.06), 0 24px 60px -30px rgba(93, 206, 247, 0.25)'
-  },
+      '0 0 0 1px rgba(93, 206, 247, 0.06), 0 24px 60px -30px rgba(93, 206, 247, 0.25)',
+  } as React.CSSProperties,
   badge: {
     display: 'inline-flex',
     alignItems: 'center',
