@@ -1,6 +1,11 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useLocale } from '../../i18n';
 
+interface NavProps {
+  onNavigate?: (to: 'home' | 'quotation') => void;
+  currentPage?: string;
+}
+
 const brandMark = (
   <img
     src="/img/logo.jpg"
@@ -25,7 +30,7 @@ const arrowSvg = (
   </svg>
 );
 
-export function Nav() {
+export function Nav({ onNavigate, currentPage }: NavProps) {
   const { t, locale } = useLocale();
   const [open, setOpen] = useState(false);
 
@@ -91,6 +96,38 @@ export function Nav() {
                 </span>
               </a>
             ))}
+            <div style={{
+              height: 1,
+              background: 'var(--color-hair)',
+              margin: '6px 0' ,
+            }} />
+            <a
+              href={currentPage === 'quotation' ? '/' : '?page=quotation'}
+              role="menuitem"
+              onClick={(e) => {
+                close();
+                if (onNavigate) {
+                  e.preventDefault();
+                  onNavigate(currentPage === 'quotation' ? 'home' : 'quotation');
+                }
+              }}
+              style={{
+                color: currentPage === 'quotation' ? 'var(--color-cyan)' : undefined,
+              }}
+            >
+              <span>
+                {locale === 'ar'
+                  ? currentPage === 'quotation' ? '🏠 الصفحة الرئيسية' : '📄 عرض السعر'
+                  : currentPage === 'quotation' ? '🏠 Home' : '📄 Quotation'}
+              </span>
+              <span style={{
+                [locale === 'ar' ? 'marginInlineStart' : 'marginInlineEnd']: 'auto',
+                display: 'flex',
+                transform: locale === 'ar' ? 'rotate(180deg)' : 'none',
+              }}>
+                {arrowSvg}
+              </span>
+            </a>
           </nav>
         </div>
       </div>

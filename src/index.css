@@ -2962,6 +2962,11 @@ html[lang="ar"] .foot-bottom .licenses {
   height: 22px;
 }
 
+/* ─────────── Quotation Page ─────────── */
+.deal-card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
 /* ─────────── Keyframes ─────────── */
 @keyframes zoomFadeIn {
   from { opacity: 0; }
